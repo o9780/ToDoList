@@ -16,7 +16,7 @@ const getDayName = (year, month, day) => {
   return dayNames[dayIndex];
 };
 
-export default function Task() {
+export default function Task({navigation}) {
   const today = new Date();
   const currentMonth = today.getMonth();
   const currentDay = today.getDate();
@@ -74,7 +74,7 @@ export default function Task() {
         <Text style={{ color: "#fff", fontSize: hp('3%'), top: hp('3%'), left: wp('3%') }}>
           
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={navigation.navigate('Tasks')}>
       <Text style={{backgroundColor:"#fff",width:wp('8%'),fontSize:hp('3.5%'),position:"absolute",borderRadius:hp('1%'),alignSelf:"flex-end",textAlign:"center",color:"#4044C9",right:wp('4%'),bottom:hp('-3.5%')}}>+</Text>
     </TouchableOpacity>
         <Picker
